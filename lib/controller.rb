@@ -37,6 +37,10 @@ class Controller
         when 1
           View.start_menu
           break
+        when 2
+          Item.one_item
+          View.index_items_menu
+          Controller.user_input_in_index_items_menu
         else
           View.error
       end

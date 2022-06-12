@@ -25,5 +25,10 @@ attr_reader :id, :name, :price, :quantity, :brand
     end
     return all_items  
   end
+
+  def self.one_item
+    
+  end
+
 end
 
