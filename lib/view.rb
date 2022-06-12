@@ -4,10 +4,12 @@ require_relative 'controller'
 class View
 
   def self.welcome
-    puts "****************************"
-    puts "Bienvenue dans le projet POO"
-    puts "         ITEM SHOP          "
-    puts "****************************"
+    puts "************************************"
+    puts "*************************************"
+    puts "**  Bienvenue dans le projet POO  **"
+    puts "**         ITEM SHOP              **"
+    puts "************************************"
+    puts "************************************"
   end
 
   def self.start_menu
@@ -18,23 +20,28 @@ class View
   end
 
   def self.index_items_menu
+    puts "**************************"
     puts "Que souhaitez-vous faire ?"
-    puts "Liste des items chargée."
     puts "1: Revenir au menu d'accueil"
   end
 
   def self.all(all_items)
+    puts "************************"
+    puts "Liste des items chargée."
+    puts "************************"
     all_items.each do |item|
-      puts "#{item.id}    #{item.name}   #{item.price}"
+      puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
     end
   end
 
   def self.error
+    puts "******************"
     puts "ERREUR!!!ERREUR!!!"
     puts "Veuillez saisir un choix valide."
   end
 
   def self.goodbye
+    puts "*******"
     puts "Bye,bye"
   end
 
