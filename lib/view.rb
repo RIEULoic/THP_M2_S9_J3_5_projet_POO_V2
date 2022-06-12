@@ -23,6 +23,12 @@ class View
     puts "**************************"
     puts "Que souhaitez-vous faire ?"
     puts "1: Revenir au menu d'accueil"
+    puts "2: Choisir un item"
+  end
+
+  def self.item_menu_selector
+    puts "**********************************************"
+    puts "Selectionnez un item en entrant son numero id."
   end
 
   def self.all(all_items)
@@ -30,8 +36,14 @@ class View
     puts "Liste des items chargée."
     puts "************************"
     all_items.each do |item|
-      puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
+      puts "#{item.id} #{item.name}"
     end
+  end
+
+  def self.show_selected_item(selected_item)
+    puts "**************************"
+    puts "Voici l'item sélectionné :"
+    puts "#{selected_item.id} #{selected_item.name} #{selected_item.price} #{selected_item.quantity} #{selected_item.brand}"
   end
 
   def self.error

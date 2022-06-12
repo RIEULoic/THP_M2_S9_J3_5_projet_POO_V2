@@ -11,10 +11,6 @@ attr_reader :id, :name, :price, :quantity, :brand
     @brand = brand
   end
 
-  def self.index_items
-    items = Item.all
-    View.all(items)
-  end
 
   def self.all
     all_items = []
@@ -26,8 +22,13 @@ attr_reader :id, :name, :price, :quantity, :brand
     return all_items  
   end
 
-  def self.one_item
-    
+  def self.one_item(item_id)
+    CSV.foreach("db/item.csv") do |line|
+      if line[0].to_i == item_id.to_i 
+        selected_item = Item.new(line[0], line[1], line[2], line[3], line[4])
+        return selected_item
+      end
+    end
   end
 
 end
