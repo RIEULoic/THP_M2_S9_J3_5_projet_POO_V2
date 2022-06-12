@@ -1,11 +1,12 @@
 require 'csv'
 
 class Item
-attr_reader :id, :name
+attr_reader :id, :name, :price
 
-  def initialize(id, name)
+  def initialize(id, name, price)
     @id = id
     @name = name
+    @price = price
   end
 
   def self.index_items
@@ -17,7 +18,7 @@ attr_reader :id, :name
     all_items = []
 
     CSV.foreach("db/item.csv") do |l|
-      item = Item.new(l[0], l[1])
+      item = Item.new(l[0], l[1], l[2])
       all_items << item
     end
     return all_items  

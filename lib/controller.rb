@@ -13,36 +13,36 @@ class Controller
     View.start_menu
 
     while true  
-    params = gets.chomp.to_i
+      params = gets.chomp.to_i
 
-    case params
-      when 1
-        Item.index_items
-        View.index_items_menu
-        Controller.user_input_in_index_items_menu
-      when 2
-        View.goodbye
-        break #quitte le programme
-      else
-        View.error
+      case params
+        when 1
+          Item.index_items
+          View.index_items_menu
+          Controller.user_input_in_index_items_menu
+        when 2
+          View.goodbye
+          break #quitte le programme
+        else
+          View.error
       end  
     end
   end
 
-  def self.user_input_in_index_items_menu
-    
-  while true
-     params = gets.chomp.to_i
+  def self.user_input_in_index_items_menu  
+    while true
+      params = gets.chomp.to_i
 
-    case params
-      when 1
-        View.start_menu
-        break
-      else
-        View.error
+      case params
+        when 1
+          View.start_menu
+          break
+        else
+          View.error
       end
     end
   end
+
 end
 
 #  def create_gossip
